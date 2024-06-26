@@ -1,0 +1,57 @@
+body {
+  background-color: rgb(74, 59, 88);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  border-radius: 7px;
+  border: 3px solid rgb(16, 16, 16);
+  background: rgb(243, 237, 237);
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+#playButton,
+#restartButton {
+  width: 90px;
+  height: 40px;
+  background-color: blueviolet;
+  border: 2px solid blueviolet;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  transition: 0.7s ease;
+}
+
+#playButton:hover {
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px blueviolet;
+}
+
+@media only screen and (max-width: 600px) {
+  #playButton,
+  #restartButton {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #playButton,
+  #restartButton {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+  }
+}
