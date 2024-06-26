@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="GameCraft.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>GC | Archery</title>
+</head>
+
+<body class="gameContainer" onload="loadingGame()">
+
+    <div class="gameHeader"><img src="logo.png">
+    </div>
+    <div class="dropdown game">
+        <button class="dropdownbutton" onclick="myFunction()"><img src="navIcon.png"
+                class="buttontxt"></button>
+        <div class="revealcontent" id="myDropdown">
+            <a href="gchome.html">Home</a>
+            <a href="gcspel1.html">Archery Spel</a>
+            <a href="gcspel2.html">Penalty Shootout</a>
+            <a href="gcContact.html">Contact</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="mainGameContent">
+        <div class="Game">Archery</div>
+        <div class="Handleiding">Handleiding</div>
+        <div class="HandleidingContent">
+            <p>Archery is een spel waar je boogschieten in het bos digitaal kunt doen! Om het spel te beginnen, druk op
+                de rode en witte knop met "Play" erop. Stuur de boog in de richting die je wil door de rechterpijl- of
+                linkerpijltoets (zit op je toetsenbord) ingedrukt te houden en dan loslaten. Druk op de spatiebalk om
+                een pijl te schieten. Het doel van het spel is om te zien of je alle doelen neer kunt schieten met
+                alleen 10 pijlen. Veel plezier!</p>
+        </div>
+    </div>
+
+    <div id="mobielCanvas" style="margin-left: 40px;">Spel niet geschikt voor mobiel.</div>
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="gameFooter">Copyright © 2024</div>
+
+    <script src="gamecraft.js"></script>
+</body>
+
+</html>

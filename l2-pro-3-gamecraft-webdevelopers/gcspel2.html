@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="GameCraft.css">
+    <title>GC | Spel 2</title>
+</head>
+
+<body class="gameContainer">
+
+    <div class="gameHeader"><img src="logo.png">
+
+    </div>
+    <div class="dropdown game">
+        <button class="dropdownbutton" onclick="myFunction()"><img src="navIcon.png"
+                class="buttontxt"></button>
+        <div class="revealcontent" id="myDropdown">
+            <a href="gchome.html">Home</a>
+            <a href="gcspel1.html">Archery</a>
+            <a href="gcspel2.html">Penalty Shootout</a>
+            <a href="gcContact.html">Contact</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="mainGameContent">
+        <div class="Game">Penalty Shootout</div>
+        <div class="Handleiding">Handleiding</div>
+        <div class="HandleidingContent">
+            <p1>Aftrap: Klik op de "Start" knop om het spel te beginnen.
+                Penalty Schieten: Klik ergens op het scherm om een penalty te schieten. Probeer de bal in het doel te
+                schieten door de richting en kracht van je schot te beheersen.
+                Herstarten: Na elke penaltyronde kun je op de "Herstarten" knop klikken om een nieuwe serie penalty's te
+                starten.
+            </p1>
+        </div>
+
+        <div id="mobielCanvas" style="margin-left:0;margin-top:140px;">Spel niet geschikt voor mobiel.</div>
+        <canvas id="myCanvas2"></canvas>
+    </div>
+
+    <div class="gameFooter">Copyright © 2024</div>
+
+    <script src="gamecraft2.js"></script>
+    <script>
+    function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.buttontxt')) {
+                let dropdowns = document.getElementsByClassName("revealcontent");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }</script>
+</body>
+
+</html>

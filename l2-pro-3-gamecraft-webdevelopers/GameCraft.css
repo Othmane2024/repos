@@ -1,0 +1,485 @@
+/*kleurenpalet = 
+#418AB3 blauw, #5E5E5E donkergrijs,
+#A6B727 groen, #8D9B22 donkergroen, 
+#F69200 oranje,#DF5327 rood,
+#DDDDDD grijs/wit,#C47706 donker oranje.*/
+html {
+    font-family: Arial;
+    overflow-x: hidden;
+}
+
+.container,
+.gameContainer {
+    margin: 0;
+    background-color: #418AB3;
+}
+
+.header,
+.gameHeader {
+    background-color: #5E5E5E;
+    text-align: center;
+    border-bottom: #F69200 3px solid;
+    height: 200px;
+}
+
+.maincontent,
+.mainGameContent,
+.mainContactContent {
+    margin: 0 auto;
+    background-color: #ffffff45;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+}
+
+h1 {
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    color: white;
+}
+
+.dropdown img {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdownbutton {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.buttontxt {
+    transition: all.1s ease-in;
+}
+
+.buttontxt:active {
+    animation: rotation .3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.revealcontent {
+    display: none;
+    position: absolute;
+}
+
+.revealcontent a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #DDDDDD;
+    padding: 10px;
+    background-color: #bdcb00;
+    border: #8D9B22 4px solid;
+    border-radius: 10px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.show {
+    display: block;
+}
+
+img {
+    align-self: center;
+}
+
+.Game {
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    color: #bdcb00;
+}
+
+.Handleiding {
+    font: Trebuchet MS 22px bold;
+    color: #DF5327;
+}
+
+.HandleidingContent,
+.tekst {
+    font-family: Arial;
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+#name,
+#email,
+#message {
+    background-color: white;
+    border: 2px solid #DDDDDD;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 50%;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 50%;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    border: solid #8D9B22 2px;
+    border-radius: 4px;
+    width: 20%;
+    color: #DDDDDD;
+    background-color: #bdcb00;
+}
+
+#gameCanvas {
+    border: 5px outset white;
+}
+
+.footer,
+.gameFooter {
+    background-color: #5E5E5E;
+    text-align: center;
+    color: white;
+    border-top: #F69200 3px solid;
+    padding-top: 10px;
+}
+
+@media screen and (min-width:770px) {
+
+    .container,
+    .gameContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 200px 405px 100px 100px;
+        gap: 0px 0px;
+    }
+
+    .header,
+    .gameHeader {
+        grid-area: 1 / 1 / 2 / 9;
+    }
+
+    .header img,
+    .gameHeader img {
+        position: relative;
+        top: -40px;
+        width: 500px;
+        height: 300px;
+    }
+
+    .dropdown {
+        position: relative;
+        margin-top: 70px;
+        grid-area: 1 / 7 / 2 / 9;
+    }
+
+    .dropdown img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .revealcontent {
+        min-width: 160px;
+        z-index: 1;
+        margin-left: 20px;
+    }
+
+    .maincontent,
+    .mainGameContent,
+    .mainContactContent {
+        grid-area: 3 / 1 / 4 / 9;
+        margin-bottom: 100px;
+        width: 400px;
+        height: max-content;
+    }
+
+    .mainGameContent {
+        height: 300px;
+    }
+
+    .Game {
+        font-size: 56px;
+    }
+
+    .HandleidingContent,
+    .tekst {
+        font-size: 15px;
+        max-width: 400px;
+    }
+
+    .HandleidingContent p {
+        margin-bottom: 50px;
+    }
+
+    label {
+        position: relative;
+        left: -150px;
+        top: 20px;
+    }
+
+    #gameCanvas,
+    #myCanvas2 {
+        width: 700px;
+        height: 600px;
+        margin-left: 20px;
+        margin-right: 50px;
+        grid-area: 4 / 3 / 4 / 8;
+    }
+
+    #myCanvas2 {
+        margin: 80px 80px 80px -150px;
+    }
+
+    .footer,
+    .gameFooter {
+        padding-top: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+    }
+
+}
+
+@media screen and (max-width:1200px) and (min-width:770px) {
+    .dropdown {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (min-width:450px) {
+    #mobielCanvas {
+        display: none;
+    }
+
+
+    .mainContactContent {
+        height: fit-content;
+    }
+
+}
+
+@media screen and (max-width: 770px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+    }
+
+    .gameContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+    }
+
+    .header {
+        grid-area: 1 / 1 / 3 / 8;
+        padding-bottom: 50px;
+    }
+
+    .gameHeader {
+        grid-area: 1/1/3/8;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+
+    .header img,
+    .gameHeader img {
+        width: 500px;
+        height: 300px;
+        margin-top: -50px;
+    }
+
+    .dropdown {
+        grid-area: 2 / 1 / 3 / 4;
+        margin: -10px 0px 0px 80px;
+    }
+
+    .show {
+        margin-left: 45px;
+    }
+
+    .dropdown img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .maincontent {
+        grid-area: 3 / 1 / 7 / 8;
+    }
+
+    .maincontent {
+        margin: 50px auto 90px auto;
+        width: 450px;
+    }
+
+    .mainContactContent {
+        margin-top: 50px;
+        grid-area: 3 / 1 / 6 / 8;
+    }
+
+    .mainGameContent {
+        grid-area: 3 / 1 / 7 / 8;
+        width: 400px;
+        height: 300px;
+    }
+
+    .Game {
+        padding: 10px;
+        font-size: 40px;
+    }
+
+    .Handleiding {
+        font-size: 20px;
+    }
+
+    .HandleidingContent {
+        margin-left: 20px;
+        width: 350px;
+    }
+
+    .tekst {
+        padding: 10px;
+    }
+
+    #gameCanvas,
+    #myCanvas2 {
+        width: 500px;
+        height: 400px;
+        margin: 50px 50px 50px 120px;
+        grid-area: 5/1/8/8;
+    }
+
+    #myCanvas2 {
+        margin: 100px 0px 0px -50px;
+    }
+
+    .footer {
+        grid-area: 7 / 1 / 8 / 8;
+    }
+
+    .gameFooter {
+        grid-area: 8/1/9/8;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 100px;
+        gap: 0px 0px;
+    }
+
+    .gameContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 350px 200px 200px 200px 100px 100px;
+        gap: 0px 0px;
+    }
+
+
+    .gameHeader {
+        grid-area: 1 / 1 / 2 / 8;
+    }
+
+
+    .header {
+        grid-area: 1 / 1 / 3 / 8;
+    }
+
+    .header img,
+    .gameHeader img {
+        width: 350px;
+        height: 300px;
+    }
+
+    .dropdown {
+        margin: -80px 0px 0px 50px;
+    }
+
+    .contact {
+        margin: -30px 0px 0px 50px;
+    }
+
+    .game {
+        margin: -200px 0px 0px 50px;
+    }
+
+    .dropdown img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .maincontent {
+        grid-area: 2 / 1 / 6 / 8;
+        width: 300px;
+    }
+
+    .tekst {
+        width: 250px;
+    }
+
+    .mainContactContent {
+        width: 300px;
+        margin-top: 10px;
+        margin-bottom: 100px;
+        grid-area: 3 / 1 / 6 / 8;
+    }
+
+    .mainGameContent {
+        grid-area: 2 / 1 / 4 / 8;
+        height: 320px;
+        width: 340px;
+    }
+
+    .HandleidingContent {
+        width: 300px;
+    }
+
+    #gameCanvas,
+    #myCanvas2 {
+        display: none;
+    }
+
+    #mobielCanvas {
+        font-size: 30px;
+        color: #F69200;
+        text-shadow: -1px 2px 0 #DF5327,
+            1px 2px 0 #DF5327,
+            1px -1px 0 #DF5327,
+            -1px -1px 0 #DF5327;
+        border: 5px outset white;
+        background-color: white;
+        padding: 50px;
+        width: 230px;
+        height: min-content;
+        grid-area: 3 / 1 / 4 / 8;
+        margin-top: 200px;
+        margin-left: 55px;
+    }
+
+    .footer,
+    .gameFooter {
+        grid-area: 6 / 1 / 7 / 8;
+    }
+}

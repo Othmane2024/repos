@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" style="@media screen and (min-width: 770px){overflow-y: hidden;}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GC | Home</title>
+    <link rel="stylesheet" href="GameCraft.css">
+    <link rel="stylesheet" href="contact.php">
+</head>
+
+<body class="container">
+    <div class="header"><img src="logo.png">
+    </div>
+    <div class="dropdown contact">
+        <button class="dropdownbutton" onclick="myFunction()"><img src="navIcon.png" class="buttontxt"></button>
+        <div class="revealcontent" id="myDropdown">
+            <a href="gchome.html">Home</a>
+            <a href="gcspel1.html">Archery</a>
+            <a href="gcspel2.html">Penalty Shootout</a>
+            <a href="gcContact.html">Contact</a>
+        </div>
+    </div>
+
+
+    <div class="mainContactContent">
+
+        <h1>Contact Us</h1>
+
+        <form method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Send">
+        </form>
+
+
+    </div>
+
+    <div class="footer">Copyright © 2024</div>
+    </div>
+    <script src="gamecraft.js"></script>
+</body>
+
+</html>
